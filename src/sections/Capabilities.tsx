@@ -77,16 +77,16 @@ export function Capabilities() {
           return (
             <section
               key={panel.eyebrow}
-              className={`sticky top-0 flex h-screen items-center justify-center overflow-hidden ${
+              className={`sticky top-0 flex h-screen items-start justify-center overflow-hidden pt-4 md:pt-5 ${
                 index === 0 ? "" : ""
               }`}
               style={{ zIndex: 20 + index }}
             >
               <div
-                className={`relative h-[88vh] w-[94%] overflow-hidden border shadow-[0_40px_160px_rgba(0,0,0,0.32)] md:w-[90%] lg:w-[86%] ${
+                className={`relative h-[92vh] w-[94%] overflow-hidden border shadow-[0_40px_160px_rgba(0,0,0,0.32)] md:w-[90%] lg:h-[94vh] lg:w-[86%] ${
                   index === 0
-                    ? "rounded-[24px]"
-                    : "rounded-t-[24px] rounded-b-none"
+                    ? "rounded-t-[28px] rounded-b-[24px]"
+                    : "rounded-t-[28px] rounded-b-none"
                 } ${
                   isLight
                     ? "border-black/10 bg-[linear-gradient(180deg,#ece4d7_0%,#e3dbcf_100%)] text-[#11110f]"
