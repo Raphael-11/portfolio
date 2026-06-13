@@ -38,8 +38,12 @@ export function Navbar() {
   return (
     <>
       <motion.nav
-        initial={{ y: -24, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={false}
+        animate={{
+          y: scrolled || mobileOpen ? 0 : -28,
+          opacity: scrolled || mobileOpen ? 1 : 0,
+          pointerEvents: scrolled || mobileOpen ? "auto" : "none",
+        }}
         transition={{ duration: 0.42, ease: [0.23, 1, 0.32, 1] }}
         className="fixed left-0 right-0 top-3 z-40 px-3 transition-[top] duration-200 md:top-5 md:px-6"
       >
