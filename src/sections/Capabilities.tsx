@@ -5,7 +5,6 @@ type CapabilityPanel = {
   title: string;
   description: string;
   theme: "dark" | "light";
-  image: string;
   items?: string[];
 };
 
@@ -16,7 +15,6 @@ const panels: CapabilityPanel[] = [
     description:
       "Clear flows, sharp interfaces, stable backend structure, and enough polish that the product feels intentional instead of assembled.",
     theme: "dark",
-    image: "/projects/orange-iss.jpg",
   },
   {
     eyebrow: "/LAYER 01",
@@ -24,7 +22,6 @@ const panels: CapabilityPanel[] = [
     description:
       "End-to-end systems across web and mobile, built around real usage rather than isolated screens.",
     theme: "light",
-    image: "/projects/fiesta.jpg",
     items: [
       "React / Next.js / NestJS / MongoDB",
       "React Native / Maps / QR / API Integration",
@@ -36,7 +33,6 @@ const panels: CapabilityPanel[] = [
     description:
       "Operational surfaces and structured server logic where reliability matters as much as the interface.",
     theme: "dark",
-    image: "/projects/arkan.jpg",
     items: [
       "Role-Based UI / Filters / Workflow Logic",
       "REST APIs / Auth / Databases / Clean Architecture",
@@ -48,7 +44,6 @@ const panels: CapabilityPanel[] = [
     description:
       "Polished interface work and fast product shaping for MVPs, demos, and complete flows.",
     theme: "light",
-    image: "/projects/webank.jpg",
     items: [
       "Figma / Motion / Responsive / Interaction Polish",
       "Fast MVPs / Startup Demos / Working Flows",
@@ -60,7 +55,6 @@ const panels: CapabilityPanel[] = [
     description:
       "The work is strongest when the product feels clear, the system feels organized, and the interaction details are taken seriously.",
     theme: "dark",
-    image: "/projects/tonights-movie.jpg",
   },
 ];
 
@@ -95,27 +89,22 @@ export function Capabilities() {
                     : "rounded-t-[24px] rounded-b-none"
                 } ${
                   isLight
-                    ? "border-black/10 bg-[#e9e3d8] text-[#11110f]"
-                    : "border-white/10 bg-slate-950 text-[#f7f3ea]"
+                    ? "border-black/10 bg-[linear-gradient(180deg,#ece4d7_0%,#e3dbcf_100%)] text-[#11110f]"
+                    : "border-white/10 bg-[linear-gradient(180deg,#11110f_0%,#090909_100%)] text-[#f7f3ea]"
                 }`}
               >
-                <img
-                  src={panel.image}
-                  alt={panel.title}
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
                 <div
                   className={`absolute inset-0 ${
                     isLight
-                      ? "bg-[linear-gradient(90deg,rgba(233,227,216,0.92)_0%,rgba(233,227,216,0.86)_36%,rgba(233,227,216,0.92)_100%)]"
-                      : "bg-[linear-gradient(90deg,rgba(2,6,23,0.9)_0%,rgba(2,6,23,0.78)_36%,rgba(2,6,23,0.92)_100%)]"
+                      ? "bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.55),transparent_34%),linear-gradient(90deg,rgba(233,227,216,0.9)_0%,rgba(233,227,216,0.82)_36%,rgba(233,227,216,0.9)_100%)]"
+                      : "bg-[radial-gradient(circle_at_top_left,rgba(215,255,98,0.08),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(255,122,61,0.08),transparent_30%),linear-gradient(90deg,rgba(17,17,15,0.96)_0%,rgba(9,9,9,0.9)_36%,rgba(17,17,15,0.96)_100%)]"
                   }`}
                 />
                 <div
                   className={`absolute inset-0 ${
                     isLight
-                      ? "bg-[linear-gradient(180deg,rgba(233,227,216,0.1)_0%,rgba(233,227,216,0.18)_42%,rgba(233,227,216,0.82)_100%)]"
-                      : "bg-[linear-gradient(180deg,rgba(2,6,23,0.14)_0%,rgba(2,6,23,0.22)_42%,rgba(2,6,23,0.84)_100%)]"
+                      ? "bg-[linear-gradient(180deg,rgba(233,227,216,0.08)_0%,rgba(233,227,216,0.16)_42%,rgba(233,227,216,0.72)_100%)]"
+                      : "bg-[linear-gradient(180deg,rgba(17,17,15,0.18)_0%,rgba(17,17,15,0.28)_42%,rgba(5,5,4,0.84)_100%)]"
                   }`}
                 />
                 <GridOverlay light={isLight} />
@@ -185,8 +174,8 @@ export function Capabilities() {
                               key={item}
                               className={`rounded-[16px] border px-4 py-4 font-mono text-[11px] uppercase tracking-[0.12em] ${
                                 isLight
-                                  ? "border-black/10 bg-white/40 text-black/65"
-                                  : "border-white/10 bg-white/[0.03] text-[#c6bdab]"
+                                  ? "border-black/10 bg-white/36 text-black/65 backdrop-blur-sm"
+                                  : "border-white/10 bg-white/[0.03] text-[#c6bdab] backdrop-blur-sm"
                               }`}
                             >
                               {item}

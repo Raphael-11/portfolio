@@ -24,7 +24,7 @@ export function HorizontalWork() {
     if (!section || !container) return;
 
     const getScrollDistance = () =>
-      Math.max(0, container.scrollWidth - window.innerWidth + 96);
+      Math.max(0, container.scrollWidth - section.clientWidth);
 
     const ctx = gsap.context(() => {
       gsap.to(container, {
@@ -51,10 +51,10 @@ export function HorizontalWork() {
       data-cursor="drag"
       className="relative w-full overflow-hidden bg-[#050504]"
     >
-      <div className="mx-auto max-w-7xl px-4 pb-8 pt-20 md:px-8 md:pt-32 lg:px-12">
-        <SectionHeader label="/GALLERY" className="mb-10 md:mb-14" />
+      <div className="mx-auto max-w-7xl px-4 pb-4 pt-20 md:px-8 md:pb-6 md:pt-28 lg:px-12">
+        <SectionHeader label="/GALLERY" className="mb-8 md:mb-10" />
 
-        <div className="grid gap-5 lg:grid-cols-[minmax(0,0.8fr)_minmax(320px,0.5fr)] lg:items-end">
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,0.8fr)_minmax(320px,0.5fr)] lg:items-end">
           <TextAnimation
             as="h2"
             text="A visual index of shipped thinking."
@@ -88,19 +88,19 @@ export function HorizontalWork() {
         </div>
       </div>
 
-      <div className="hidden pb-28 md:block" data-cursor="drag">
+      <div className="hidden overflow-hidden px-4 pb-12 md:block md:px-8 md:pb-16 lg:px-12" data-cursor="drag">
         <div
           ref={containerRef}
           data-cursor="drag"
-          className="flex gap-4 pl-8 lg:pl-12"
+          className="flex gap-5 pr-4 md:pr-8 lg:pr-12"
         >
           {projects.map((project) => (
             <article
               key={project.id}
               data-cursor="project"
-              className="h-card group w-[420px] shrink-0 overflow-hidden rounded-[8px] border border-white/10 bg-[#0c0c0a] lg:w-[520px] cursor-project cursor-magnetic"
+              className="h-card group w-[min(78vw,520px)] shrink-0 overflow-hidden rounded-[8px] border border-white/10 bg-[#0c0c0a] cursor-project cursor-magnetic lg:w-[min(68vw,520px)]"
             >
-              <div className="relative h-[320px] overflow-hidden lg:h-[380px]">
+              <div className="relative h-[300px] overflow-hidden lg:h-[360px]">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -114,7 +114,7 @@ export function HorizontalWork() {
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <h3 className="mb-2 text-2xl font-bold text-[#f7f3ea] transition-colors duration-200 group-hover:text-[#d7ff62]">
+                  <h3 className="mb-2 text-xl font-bold text-[#f7f3ea] transition-colors duration-200 group-hover:text-[#d7ff62] lg:text-2xl">
                     {project.title}
                   </h3>
                   <div className="flex flex-wrap gap-2">
