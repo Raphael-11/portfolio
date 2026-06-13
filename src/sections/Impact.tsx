@@ -2,10 +2,19 @@ import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { SectionHeader } from "@/components/SectionHeader";
 
-const stats = [
-  { value: 6, suffix: "+", label: "Projects Built" },
+type Stat = {
+  value: number;
+  suffix: string;
+  label: string;
+  isDecimal?: boolean;
+  isText?: boolean;
+  textValue?: string;
+};
+
+const stats: Stat[] = [
+  { value: 6, suffix: "+", label: "Featured Product Builds" },
   { value: 1, suffix: "", label: "Award-Winning Project" },
-  { value: 1.5, suffix: "", label: "Months Internship Experience", isDecimal: true },
+  { value: 17, suffix: "", label: "Completed Certificates" },
   { value: 0, suffix: "", label: "Primary Build Focus", isText: true, textValue: "Full-Stack + Mobile" },
 ];
 
@@ -77,7 +86,7 @@ export function Impact() {
           className="mb-12 md:mb-16"
         >
           <h2 className="max-w-4xl text-4xl font-bold leading-tight text-[#f7f3ea] md:text-6xl">
-            Small sample, clear signal.
+            Small sample, clearer proof.
           </h2>
         </motion.div>
 

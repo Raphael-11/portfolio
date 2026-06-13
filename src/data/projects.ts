@@ -21,15 +21,15 @@ export const projects: Project[] = [
     title: "Orange ISS Portal",
     type: "Award-Winning Web Platform",
     description:
-      "AI-powered internship/PFE management portal with dashboards, role-based access, workflow management, and academic process optimization.",
+      "Award-winning internship and PFE management portal with dashboards, role-based access, workflow tracking, and clearer academic coordination.",
     longDescription:
       "A complete portal built to improve the internship/PFE workflow between students, supervisors, companies, and administrators. The platform focuses on smoother management, better communication, document handling, and a more modern experience for academic internship processes.",
     problem:
       "Students, supervisors, and companies needed a smoother and more organized way to manage internships and PFE workflows.",
     solution:
-      "We built a modern portal with dashboards, user roles, document workflows, and AI-powered features to make the process easier to manage.",
+      "We built a modern portal with dashboards, user roles, document workflows, and cleaner status visibility to make the process easier to manage.",
     impact: "The project won Best ISS Project of the Year.",
-    stack: ["React", "NestJS", "MongoDB", "AI Features"],
+    stack: ["React", "NestJS", "MongoDB", "Workflow Design"],
     highlight: "Best ISS Project",
     image: "/projects/orange-iss.jpg",
     featured: true,
@@ -69,7 +69,7 @@ export const projects: Project[] = [
       "A React Native seller app built during a 1.5-month internship at Arkan. It helps sellers manage inventory, stock, sales, orders, and support chat.",
     longDescription:
       "Built during a 1.5-month internship, this app helps sellers manage their entire inventory workflow.",
-    stack: ["React Native", "APIs", "Swagger", "Magento Exposure"],
+    stack: ["React Native", "REST APIs", "Swagger", "Magento Workflows"],
     highlight: "Internship build",
     image: "/projects/arkan.jpg",
   },
@@ -79,10 +79,10 @@ export const projects: Project[] = [
     title: "WeBank",
     type: "Banking Management App",
     description:
-      "A Java desktop banking management app where clients can manage transactions, view history, and chat with support.",
+      "A Java desktop banking management app where clients can manage accounts, transfers, transaction history, and support-style communication.",
     longDescription:
       "A comprehensive desktop banking solution built with Java and Scene Builder.",
-    stack: ["Java", "Scene Builder"],
+    stack: ["Java", "JavaFX", "Scene Builder"],
     highlight: "Desktop banking",
     image: "/projects/webank.jpg",
   },
@@ -92,10 +92,10 @@ export const projects: Project[] = [
     title: "Tonight's Movie",
     type: "Movie Recommendation System",
     description:
-      "A C-based recommendation system that suggests movies based on user preferences and matching logic.",
+      "A C-based recommendation system that stores movie data and suggests titles based on user preferences and matching logic.",
     longDescription:
       "An intelligent recommendation engine built in C that matches users with movies based on their preferences.",
-    stack: ["C", "Algorithms", "Recommendation Logic"],
+    stack: ["C", "Algorithms", "Data Handling"],
     highlight: "C algorithms",
     image: "/projects/tonights-movie.jpg",
   },

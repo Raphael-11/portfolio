@@ -12,12 +12,12 @@ const contactDetails = [
   },
   {
     label: "Open To",
-    value: "Internships, freelance, collaboration",
+    value: "Internships, junior roles, freelance, collaboration",
     icon: Briefcase,
   },
   {
     label: "Best Fit",
-    value: "Web apps, mobile flows, dashboards, APIs",
+    value: "Web apps, mobile flows, dashboards, APIs, FiveM systems",
     icon: Layers,
   },
   {
@@ -55,7 +55,9 @@ export function Contact() {
 
             <p className="mt-8 max-w-2xl text-pretty text-base leading-8 text-[#9a9386] md:text-lg md:leading-9">
               I’m open to opportunities where I can take responsibility for the
-              interface, the implementation, and the final product feel.
+              interface, the implementation, and the final product feel across
+              internships, entry-level software roles, and focused freelance
+              work.
             </p>
 
             <a

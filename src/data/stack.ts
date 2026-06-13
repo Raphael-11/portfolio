@@ -27,14 +27,16 @@ export const stackGroups: StackGroup[] = [
       { name: "Express", description: "Fast web framework for Node.js" },
       { name: "REST APIs", description: "API design and development" },
       { name: "Swagger", description: "API documentation" },
-      { name: "Authentication", description: "JWT, OAuth, session-based auth" },
+      { name: "Node.js", description: "JavaScript runtime for backend systems" },
+      { name: "Authentication", description: "Access control and API auth patterns" },
     ],
   },
   {
     label: "Database",
     items: [
       { name: "MongoDB", description: "NoSQL document database" },
-      { name: "MySQL Basics", description: "Relational database fundamentals" },
+      { name: "PostgreSQL", description: "Relational data modeling and queries" },
+      { name: "SQL", description: "Queries, CRUD, and structured data workflows" },
     ],
   },
   {
@@ -57,10 +59,13 @@ export const stackGroups: StackGroup[] = [
   {
     label: "Other",
     items: [
+      { name: "Python", description: "Scripting, data work, and general-purpose programming" },
       { name: "Java", description: "Object-oriented programming" },
+      { name: "Lua", description: "FiveM scripting and gameplay systems" },
       { name: "Scene Builder", description: "JavaFX UI design tool" },
       { name: "Git", description: "Version control system" },
       { name: "GitHub", description: "Code hosting and collaboration" },
+      { name: "Docker", description: "Container-based local development" },
       { name: "Vercel", description: "Deployment and hosting platform" },
     ],
   },

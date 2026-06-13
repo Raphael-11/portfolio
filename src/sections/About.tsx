@@ -2,64 +2,31 @@ import { useRef } from "react";
 import {
   motion,
   useInView,
-  useReducedMotion,
-  useScroll,
-  useTransform,
 } from "framer-motion";
 import { Lightbulb, Layers, Sparkles } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
+import TextAnimation from "@/components/ui/scroll-text";
 
 const cards = [
   {
     title: "Product Thinking",
     description:
-      "I design features around real users, clear flows, and practical product value.",
+      "I design around real user flows: operations, handoffs, dashboard clarity, and practical product value.",
     icon: Lightbulb,
   },
   {
     title: "Clean Systems",
     description:
-      "I build APIs, dashboards, databases, authentication, and structured backend logic.",
+      "I build APIs, dashboards, databases, seller tools, and structured backend logic that stays readable.",
     icon: Layers,
   },
   {
-    title: "Visual Detail",
+    title: "Range With Focus",
     description:
-      "I care about spacing, motion, responsiveness, and interfaces that feel premium.",
+      "My work spans web, mobile, university systems, live game-server tooling, and local AI experiments without losing product discipline.",
     icon: Sparkles,
   },
 ];
-
-function KineticParagraph({
-  children,
-  index,
-}: {
-  children: React.ReactNode;
-  index: number;
-}) {
-  const ref = useRef<HTMLParagraphElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const shouldReduceMotion = useReducedMotion();
-
-  const parallaxX = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    index % 2 === 0 ? [16, 0, -16] : [-16, 0, 16]
-  );
-
-  return (
-    <motion.p
-      ref={ref}
-      style={{ x: shouldReduceMotion ? 0 : parallaxX }}
-      className="text-pretty text-lg leading-8 text-[#e7dfcf] md:text-2xl md:leading-10 lg:text-[1.9rem] lg:leading-[1.45]"
-    >
-      {children}
-    </motion.p>
-  );
-}
 
 export function About() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -80,31 +47,57 @@ export function About() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
           {/* Left Column - Label */}
           <div className="lg:col-span-4">
-            <motion.h2
-              className="sticky top-32 max-w-sm text-4xl font-bold leading-tight text-[#f7f3ea] md:text-5xl lg:text-6xl"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.62, ease: [0.23, 1, 0.32, 1] }}
-            >
-              Product instincts, engineered clearly.
-            </motion.h2>
+            <div className="sticky top-32 max-w-sm">
+              <TextAnimation
+                as="h2"
+                text="Product instincts, engineered clearly."
+                lineAnime
+                classname="text-4xl font-bold leading-tight text-[#f7f3ea] md:text-5xl lg:text-6xl"
+                variants={{
+                  hidden: { filter: "blur(10px)", opacity: 0, y: 28 },
+                  visible: {
+                    filter: "blur(0px)",
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.42, ease: "easeOut" },
+                  },
+                }}
+              />
+            </div>
           </div>
 
           {/* Right Column - Body */}
           <div className="space-y-7 lg:col-span-8">
-            <KineticParagraph index={0}>
-              I'm a software engineering student and full-stack developer who
-              likes the full product loop: shaping the flow, designing the UI,
-              building the API, connecting the database, and tightening the
-              final interaction details.
-            </KineticParagraph>
-            <KineticParagraph index={1}>
-              My strongest work sits where structure meets polish: admin
-              dashboards that stay readable, mobile flows that move quickly, and
-              systems that feel considered from the first click to the last
-              edge case.
-            </KineticParagraph>
+            <TextAnimation
+              as="p"
+              text="I'm a senior software engineering student and full-stack developer who likes the full product loop: shaping the flow, designing the UI, building the API, connecting the database, and tightening the final interaction details."
+              lineAnime
+              classname="text-pretty text-lg leading-8 text-[#e7dfcf] md:text-2xl md:leading-10 lg:text-[1.9rem] lg:leading-[1.45]"
+              variants={{
+                hidden: { filter: "blur(6px)", opacity: 0, y: 20 },
+                visible: {
+                  filter: "blur(0px)",
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.22 },
+                },
+              }}
+            />
+            <TextAnimation
+              as="p"
+              text="My strongest work sits where structure meets polish: admin dashboards that stay readable, mobile flows that move quickly, and systems that feel considered from the first click to the last edge case."
+              lineAnime
+              classname="text-pretty text-lg leading-8 text-[#e7dfcf] md:text-2xl md:leading-10 lg:text-[1.9rem] lg:leading-[1.45]"
+              variants={{
+                hidden: { filter: "blur(6px)", opacity: 0, y: 20 },
+                visible: {
+                  filter: "blur(0px)",
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.22 },
+                },
+              }}
+            />
           </div>
         </div>
 

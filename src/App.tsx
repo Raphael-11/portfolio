@@ -5,14 +5,16 @@ import { CustomCursor } from "@/components/CustomCursor";
 import { Preloader } from "@/sections/Preloader";
 import { Hero } from "@/sections/Hero";
 import { About } from "@/sections/About";
+import { Experience } from "@/sections/Experience";
 import { AwardSpotlight } from "@/sections/AwardSpotlight";
 import { Work } from "@/sections/Work";
+import { SphereGallery } from "@/sections/SphereGallery";
 import { HorizontalWork } from "@/sections/HorizontalWork";
 import { Capabilities } from "@/sections/Capabilities";
 import { TechStack } from "@/sections/TechStack";
 import { Process } from "@/sections/Process";
 import { Impact } from "@/sections/Impact";
-import { Testimonial } from "@/sections/Testimonial";
+import { Credentials } from "@/sections/Credentials";
 import { Contact } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
 
@@ -93,14 +95,16 @@ function App() {
           <main className="relative z-10">
             <Hero />
             <About />
+            <Experience />
             <AwardSpotlight />
             <Work />
+            <SphereGallery />
             <HorizontalWork />
             <Capabilities />
             <TechStack />
             <Process />
             <Impact />
-            <Testimonial />
+            <Credentials />
             <Contact />
           </main>
 

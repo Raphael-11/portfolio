@@ -1,8 +1,9 @@
 import { useRef, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SectionHeader } from "@/components/SectionHeader";
+import TextAnimation from "@/components/ui/scroll-text";
 import { projects } from "@/data/projects";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -10,7 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
 export function HorizontalWork() {
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
@@ -54,20 +54,38 @@ export function HorizontalWork() {
       <div className="mx-auto max-w-7xl px-4 pb-8 pt-20 md:px-8 md:pt-32 lg:px-12">
         <SectionHeader label="/GALLERY" className="mb-10 md:mb-14" />
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.58, ease: [0.23, 1, 0.32, 1] }}
-          className="grid gap-5 lg:grid-cols-[minmax(0,0.8fr)_minmax(320px,0.5fr)] lg:items-end"
-        >
-          <h2 className="max-w-4xl text-4xl font-bold leading-tight text-[#f7f3ea] md:text-6xl">
-            A visual index of shipped thinking.
-          </h2>
-          <p className="text-pretty text-base leading-8 text-[#9a9386]">
-            A quick scan of product surfaces, from internship systems to mobile
-            flows and university software builds.
-          </p>
-        </motion.div>
+        <div className="grid gap-5 lg:grid-cols-[minmax(0,0.8fr)_minmax(320px,0.5fr)] lg:items-end">
+          <TextAnimation
+            as="h2"
+            text="A visual index of shipped thinking."
+            lineAnime
+            classname="max-w-4xl text-4xl font-bold leading-tight text-[#f7f3ea] md:text-6xl"
+            variants={{
+              hidden: { filter: "blur(8px)", opacity: 0, y: 24 },
+              visible: {
+                filter: "blur(0px)",
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.26 },
+              },
+            }}
+          />
+          <TextAnimation
+            as="p"
+            text="A quick scan of product surfaces, from internship systems to mobile flows and university software builds."
+            lineAnime
+            classname="text-pretty text-base leading-8 text-[#9a9386]"
+            variants={{
+              hidden: { filter: "blur(6px)", opacity: 0, y: 20 },
+              visible: {
+                filter: "blur(0px)",
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.22 },
+              },
+            }}
+          />
+        </div>
       </div>
 
       <div className="hidden pb-28 md:block" data-cursor="drag">

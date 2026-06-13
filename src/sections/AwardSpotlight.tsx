@@ -16,7 +16,7 @@ const caseNotes = [
   },
   {
     label: "System",
-    text: "Role-based dashboards, document flows, supervisor coordination, and AI-assisted features.",
+    text: "Role-based dashboards, request and status tracking, document flows, and clearer coordination between students, supervisors, and companies.",
   },
   {
     label: "Result",
@@ -81,7 +81,7 @@ export function AwardSpotlight() {
               Orange ISS Portal
             </h3>
             <p className="mb-8 max-w-xl text-lg leading-8 text-[#c6bdab]">
-              An AI-powered internship and PFE management system for students,
+              An internship and PFE management system for students,
               supervisors, companies, and administrators.
             </p>
 
@@ -103,7 +103,7 @@ export function AwardSpotlight() {
             </div>
 
             <div className="flex flex-wrap gap-2">
-              {["React", "NestJS", "MongoDB", "AI features", "Dashboards", "Role-based access"].map(
+              {["React", "NestJS", "MongoDB", "Dashboards", "Role-based access", "Workflow tracking"].map(
                 (tech) => (
                   <span
                     key={tech}
