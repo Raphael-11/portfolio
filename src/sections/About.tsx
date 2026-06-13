@@ -113,9 +113,9 @@ export function About() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.52, delay: i * 0.08, ease: [0.23, 1, 0.32, 1] }}
               whileHover={{ y: -4 }}
-              className="glass glow-border group cursor-default rounded-[8px] p-6 transition-[border-color,background-color,transform] duration-200 md:p-7"
+              className="glass glow-border glass-hover group cursor-default rounded-[8px] p-6 transition-[border-color,background-color,transform] duration-200 md:p-7"
             >
-              <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-[8px] border border-white/10 bg-white/[0.035] transition-colors duration-200 group-hover:bg-[#d7ff62]/10">
+              <div className="glass-chip mb-5 flex h-10 w-10 items-center justify-center rounded-[8px] transition-colors duration-200 group-hover:bg-[#d7ff62]/10">
                 <card.icon className="h-5 w-5 text-[#d7ff62]" />
               </div>
               <h3 className="mb-3 text-lg font-bold text-[#f7f3ea]">

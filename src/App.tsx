@@ -78,9 +78,6 @@ function App() {
 
   return (
     <div className="relative min-h-screen bg-[#050504] text-[#f7f3ea]">
-      {/* Noise Overlay */}
-      <div className="noise-overlay" />
-
       <CustomCursor />
 
       {/* Preloader */}

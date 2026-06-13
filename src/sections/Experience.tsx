@@ -44,10 +44,10 @@ export function Experience() {
                 delay: index * 0.07,
                 ease: [0.23, 1, 0.32, 1],
               }}
-              className="grid gap-6 rounded-[8px] border border-white/10 bg-white/[0.035] p-6 md:p-7 lg:grid-cols-[220px_minmax(0,1fr)]"
+              className="glass-panel grid gap-6 rounded-[8px] p-6 md:p-7 lg:grid-cols-[220px_minmax(0,1fr)]"
             >
               <div className="flex flex-col justify-between gap-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-[8px] border border-white/10 bg-white/[0.03]">
+                <div className="glass-chip flex h-10 w-10 items-center justify-center rounded-[8px]">
                   <Briefcase className="h-5 w-5 text-[#d7ff62]" />
                 </div>
                 <div>

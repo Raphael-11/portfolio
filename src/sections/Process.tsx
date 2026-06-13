@@ -118,12 +118,12 @@ function ProcessStep({
         }}
         className={`${isLeft ? "md:pr-16" : "md:col-start-2 md:pl-16"}`}
       >
-        <div className="group rounded-[8px] border border-white/10 bg-white/[0.035] p-6 transition-[border-color,background-color] duration-200 hover:border-white/18 hover:bg-white/[0.055] md:p-7">
+        <div className="glass-panel glass-hover group rounded-[8px] p-6 transition-[border-color,background-color] duration-200 md:p-7">
           <div className="flex items-center gap-4 mb-4">
             <span className="font-mono text-3xl font-bold text-[#d7ff62]/35 md:text-4xl">
               {step.number}
             </span>
-            <div className="flex h-10 w-10 items-center justify-center rounded-[8px] border border-white/10 bg-white/[0.035] transition-colors duration-200 group-hover:bg-[#d7ff62]/10">
+            <div className="glass-chip flex h-10 w-10 items-center justify-center rounded-[8px] transition-colors duration-200 group-hover:bg-[#d7ff62]/10">
               <step.icon className="h-5 w-5 text-[#d7ff62]" />
             </div>
           </div>

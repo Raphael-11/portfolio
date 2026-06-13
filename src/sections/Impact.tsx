@@ -102,7 +102,7 @@ export function Impact() {
                 delay: i * 0.06,
                 ease: [0.23, 1, 0.32, 1],
               }}
-              className="group rounded-[8px] border border-white/10 bg-white/[0.035] p-5 text-center transition-[border-color,background-color] duration-200 hover:border-white/18 hover:bg-white/[0.055] md:p-7"
+              className="glass-panel glass-hover group rounded-[8px] p-5 text-center transition-[border-color,background-color] duration-200 md:p-7"
             >
               <div
                 className={`mb-3 font-bold leading-tight text-[#f7f3ea] transition-colors duration-200 group-hover:text-[#d7ff62] ${

@@ -48,9 +48,9 @@ export function Credentials() {
                   delay: index * 0.06,
                   ease: [0.23, 1, 0.32, 1],
                 }}
-                className="rounded-[8px] border border-white/10 bg-white/[0.035] p-6 md:p-7"
+                className="glass-panel rounded-[8px] p-6 md:p-7"
               >
-                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-[8px] border border-white/10 bg-white/[0.03]">
+                <div className="glass-chip mb-5 flex h-10 w-10 items-center justify-center rounded-[8px]">
                   <Icon className="h-5 w-5 text-[#d7ff62]" />
                 </div>
                 <p className="font-mono text-xs uppercase text-[#d7ff62]">

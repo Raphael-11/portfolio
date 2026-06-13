@@ -90,20 +90,48 @@
 @layer components {
   .glass {
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.026)),
-      rgba(17, 17, 15, 0.72);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(247, 243, 234, 0.09);
+      linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02) 42%, rgba(255, 255, 255, 0.008) 100%),
+      rgba(10, 10, 9, 0.16);
+    backdrop-filter: blur(34px) saturate(150%);
+    -webkit-backdrop-filter: blur(34px) saturate(150%);
+    border: 1px solid rgba(247, 243, 234, 0.1);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 18px 48px rgba(0, 0, 0, 0.16);
   }
 
   .glass-strong {
     background:
-      linear-gradient(145deg, rgba(247, 243, 234, 0.11), rgba(247, 243, 234, 0.035)),
-      rgba(12, 12, 10, 0.82);
-    backdrop-filter: blur(32px);
-    -webkit-backdrop-filter: blur(32px);
-    border: 1px solid rgba(247, 243, 234, 0.13);
+      linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.026) 46%, rgba(255, 255, 255, 0.012) 100%),
+      rgba(8, 8, 7, 0.12);
+    backdrop-filter: blur(44px) saturate(160%);
+    -webkit-backdrop-filter: blur(44px) saturate(160%);
+    border: 1px solid rgba(247, 243, 234, 0.12);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.11),
+      0 20px 64px rgba(0, 0, 0, 0.18);
+  }
+
+  .glass-panel {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02) 42%, rgba(255, 255, 255, 0.008)),
+      rgba(12, 12, 10, 0.14);
+    backdrop-filter: blur(30px) saturate(145%);
+    -webkit-backdrop-filter: blur(30px) saturate(145%);
+    border: 1px solid rgba(247, 243, 234, 0.1);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 16px 44px rgba(0, 0, 0, 0.14);
+  }
+
+  .glass-chip {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.018)),
+      rgba(255, 255, 255, 0.018);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgba(247, 243, 234, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   .glass-hover {
@@ -115,9 +143,9 @@
   }
 
   .glass-hover:hover {
-    background-color: rgba(247, 243, 234, 0.08);
-    border-color: rgba(247, 243, 234, 0.18);
-    box-shadow: 0 18px 80px rgba(0, 0, 0, 0.35);
+    background-color: rgba(247, 243, 234, 0.045);
+    border-color: rgba(247, 243, 234, 0.16);
+    box-shadow: 0 22px 72px rgba(0, 0, 0, 0.18);
   }
 
   .text-gradient {
@@ -150,15 +178,6 @@
     width: 2rem;
     height: 1px;
     background: linear-gradient(90deg, var(--accent-lime), transparent);
-  }
-
-  .noise-overlay {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.027;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 
   .glow-border {

@@ -76,7 +76,7 @@ export function Contact() {
               const content = (
                 <>
                   <div className="flex items-start justify-between gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[8px] border border-white/10 bg-white/[0.035] transition-colors duration-200 group-hover:bg-[#d7ff62]/10">
+                    <div className="glass-chip flex h-10 w-10 shrink-0 items-center justify-center rounded-[8px] transition-colors duration-200 group-hover:bg-[#d7ff62]/10">
                       <Icon className="h-5 w-5 text-[#d7ff62]" />
                     </div>
                     {detail.href && (
@@ -93,7 +93,7 @@ export function Contact() {
               );
 
               const className =
-                "group rounded-[8px] border border-white/10 bg-white/[0.035] p-5 transition-[border-color,background-color,transform] duration-200 hover:border-white/18 hover:bg-white/[0.055]";
+                "glass-panel glass-hover group rounded-[8px] p-5 transition-[border-color,background-color,transform] duration-200";
 
               return detail.href ? (
                 <motion.a

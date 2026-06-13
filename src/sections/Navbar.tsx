@@ -46,9 +46,14 @@ export function Navbar() {
         <div
           className={`mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-full border px-3 py-2 transition-[background-color,border-color,box-shadow] duration-200 md:px-4 ${
             scrolled
-              ? "border-white/12 bg-[#050504]/82 shadow-[0_18px_70px_rgba(0,0,0,0.42)] backdrop-blur-2xl"
-              : "border-white/10 bg-white/[0.035] backdrop-blur-xl"
+              ? "border-white/12 bg-white/[0.07] shadow-[0_18px_60px_rgba(0,0,0,0.16)] backdrop-blur-[42px]"
+              : "border-white/10 bg-white/[0.045] shadow-[0_14px_42px_rgba(0,0,0,0.12)] backdrop-blur-[36px]"
           }`}
+          style={{
+            boxShadow: scrolled
+              ? "inset 0 1px 0 rgba(255,255,255,0.1), 0 18px 60px rgba(0,0,0,0.16)"
+              : "inset 0 1px 0 rgba(255,255,255,0.08), 0 14px 42px rgba(0,0,0,0.12)",
+          }}
         >
           <a
             href="#"
@@ -71,11 +76,9 @@ export function Navbar() {
                 href={link.href}
                 onClick={handleNavClick}
                 data-cursor="link"
-                className="rounded-full px-4 py-2 text-xs font-semibold uppercase text-[#9a9386] transition-[background-color,color,transform] duration-200 hover:bg-white/[0.06] hover:text-[#f7f3ea] active:scale-[0.98]"
+                className="rounded-full px-4 py-2 text-xs font-semibold uppercase text-[#b8b0a1] transition-[background-color,color,transform,box-shadow,border-color] duration-200 hover:bg-white/[0.05] hover:text-[#f7f3ea] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] active:scale-[0.98]"
               >
-                <span className="cursor-roll-link">
-                  <span data-text={link.label}>{link.label}</span>
-                </span>
+                {link.label}
               </a>
             ))}
           </div>
@@ -83,17 +86,15 @@ export function Navbar() {
           <a
             href="mailto:raef.lafi@gmail.com"
             data-cursor="copy"
-            className="cursor-magnetic hidden rounded-full bg-[#d7ff62] px-4 py-2 text-xs font-bold text-[#050504] transition-[background-color,transform] duration-200 hover:bg-[#f7f3ea] active:scale-[0.98] md:inline-flex"
+            className="cursor-magnetic hidden rounded-full bg-[#d7ff62] px-4 py-2 text-xs font-bold text-[#050504] shadow-[0_10px_30px_rgba(215,255,98,0.22)] transition-[background-color,transform,box-shadow] duration-200 hover:bg-[#f7f3ea] hover:shadow-[0_14px_34px_rgba(247,243,234,0.16)] active:scale-[0.98] md:inline-flex"
           >
-            <span className="cursor-roll-link">
-              <span data-text="Email">Email</span>
-            </span>
+            Email
           </a>
 
           <button
             type="button"
             onClick={() => setMobileOpen((open) => !open)}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-[#f7f3ea] transition-[background-color,transform] duration-200 active:scale-[0.96] md:hidden"
+            className="glass-chip inline-flex h-9 w-9 items-center justify-center rounded-full text-[#f7f3ea] transition-[background-color,transform] duration-200 active:scale-[0.96] md:hidden"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileOpen}
           >
@@ -109,7 +110,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.18, ease: [0.23, 1, 0.32, 1] }}
-            className="fixed inset-0 z-30 bg-[#050504]/96 px-4 pt-28 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-30 bg-[#050504]/34 px-4 pt-28 backdrop-blur-[34px] md:hidden"
           >
             <div className="mx-auto max-w-sm border-t border-white/10">
               {navLinks.map((link, index) => (
